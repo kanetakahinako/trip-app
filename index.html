@@ -416,7 +416,7 @@ onValue(ref(db, '.info/connected'), snap => {
 onValue(tripsRef, snap => {
   trips = [];
   snap.forEach(c => trips.push({ _key: c.key, ...c.val() }));
-  trips.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+  trips.sort((a, b) => { const da = b.createdAt || b.date || 0; const db = a.createdAt || a.date || 0; return da > db ? 1 : da < db ? -1 : 0; });
   updateBadge();
   if (document.getElementById('screen-list').classList.contains('active')) renderList();
   if (document.getElementById('screen-export').classList.contains('active')) renderMonthGrid();
@@ -426,7 +426,8 @@ onValue(tripsRef, snap => {
 onValue(expensesRef, snap => {
   expenses = [];
   snap.forEach(c => expenses.push({ _key: c.key, ...c.val() }));
-  expenses.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+  console.log('Firebase expenses loaded:', expenses.length);
+  expenses.sort((a, b) => { const da = b.date || ''; const db = a.date || ''; return da > db ? 1 : da < db ? -1 : 0; });
   updateBadge();
   if (document.getElementById('screen-list').classList.contains('active')) renderList();
   if (document.getElementById('screen-export').classList.contains('active')) renderMonthGrid();
@@ -435,7 +436,7 @@ onValue(expensesRef, snap => {
 onValue(purchasesRef, snap => {
   purchases = [];
   snap.forEach(c => purchases.push({ _key: c.key, ...c.val() }));
-  purchases.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+  purchases.sort((a, b) => { const da = b.date || ''; const db = a.date || ''; return da > db ? 1 : da < db ? -1 : 0; });
   updateBadge();
   if (document.getElementById('screen-list').classList.contains('active')) renderList();
   if (document.getElementById('screen-export').classList.contains('active')) renderMonthGrid();
