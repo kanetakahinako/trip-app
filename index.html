@@ -388,66 +388,63 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
 
 <div class="toast" id="toast"></div>
 
-<script type="module">
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-import { getDatabase, ref, push, onValue, remove, query, orderByKey } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
-
-const firebaseConfig = {
-  databaseURL: "https://trip-app-a1746-default-rtdb.asia-southeast1.firebasedatabase.app"
-};
-
-const app = initializeApp(firebaseConfig);
-const db  = getDatabase(app);
-const tripsRef     = ref(db, 'applications');
-const expensesRef  = ref(db, 'expenses');
-const purchasesRef = ref(db, 'purchases');
-
+<script>
+const DB_URL = 'https://trip-app-a1746-default-rtdb.asia-southeast1.firebasedatabase.app';
 let trips = [], expenses = [], purchases = [], selectedMonth = null;
 const NAME_AMOUNT = { '金髙孝紀': 20000, '金髙裕亮': 10000 };
 const NAMES = ['金髙孝紀', '金髙裕亮'];
 const SUPPLIERS = ['店舗', '電脳', '（株）HAK', '（株）GAIN'];
 
-onValue(ref(db, '.info/connected'), snap => {
-  const online = snap.val();
-  document.getElementById('sync-dot').className = 'sync-dot' + (online ? '' : ' offline');
-  document.getElementById('sync-status').textContent = online ? 'リアルタイム同期中' : 'オフライン';
-});
+function objToArr(obj) {
+  if (!obj) return [];
+  return Object.entries(obj).map(([k, v]) => ({ _key: k, ...v }));
+}
 
-onValue(query(tripsRef, orderByKey()), snap => {
-  trips = [];
-  snap.forEach(c => trips.push({ _key: c.key, ...c.val() }));
-  trips.sort((a, b) => { const da = b.createdAt || b.date || 0; const db = a.createdAt || a.date || 0; return da > db ? 1 : da < db ? -1 : 0; });
-  updateBadge();
-  if (document.getElementById('screen-list').classList.contains('active')) renderList();
-  if (document.getElementById('screen-export').classList.contains('active')) renderMonthGrid();
-  document.getElementById('list-loading').style.display = 'none';
-});
+async function loadAll() {
+  try {
+    const [t, e, p] = await Promise.all([
+      fetch(DB_URL + '/applications.json').then(r => r.json()),
+      fetch(DB_URL + '/expenses.json').then(r => r.json()),
+      fetch(DB_URL + '/purchases.json').then(r => r.json())
+    ]);
+    trips     = objToArr(t).sort((a,b) => (b.date||'') > (a.date||'') ? 1 : -1);
+    expenses  = objToArr(e).sort((a,b) => (b.date||'') > (a.date||'') ? 1 : -1);
+    purchases = objToArr(p).sort((a,b) => (b.date||'') > (a.date||'') ? 1 : -1);
+    console.log('Loaded:', trips.length, expenses.length, purchases.length);
+    updateBadge();
+    document.getElementById('list-loading').style.display = 'none';
+    if (document.getElementById('screen-list').classList.contains('active')) renderList();
+    if (document.getElementById('screen-export').classList.contains('active')) renderMonthGrid();
+    document.getElementById('sync-dot').className = 'sync-dot';
+    document.getElementById('sync-status').textContent = '同期済み';
+  } catch(e) {
+    console.error(e);
+    document.getElementById('sync-dot').className = 'sync-dot offline';
+    document.getElementById('sync-status').textContent = 'オフライン';
+  }
+}
 
-onValue(query(expensesRef, orderByKey()), snap => {
-  expenses = [];
-  snap.forEach(c => expenses.push({ _key: c.key, ...c.val() }));
-  console.log('Firebase expenses loaded:', expenses.length);
-  expenses.sort((a, b) => { const da = b.date || ''; const db = a.date || ''; return da > db ? 1 : da < db ? -1 : 0; });
-  updateBadge();
-  if (document.getElementById('screen-list').classList.contains('active')) renderList();
-  if (document.getElementById('screen-export').classList.contains('active')) renderMonthGrid();
-});
+async function fbPush(path, data) {
+  const r = await fetch(DB_URL + '/' + path + '.json', {
+    method: 'POST',
+    body: JSON.stringify({ ...data, createdAt: Date.now() })
+  });
+  if (!r.ok) throw new Error('push failed');
+  await loadAll();
+}
 
-onValue(query(purchasesRef, orderByKey()), snap => {
-  purchases = [];
-  snap.forEach(c => purchases.push({ _key: c.key, ...c.val() }));
-  purchases.sort((a, b) => { const da = b.date || ''; const db = a.date || ''; return da > db ? 1 : da < db ? -1 : 0; });
-  updateBadge();
-  if (document.getElementById('screen-list').classList.contains('active')) renderList();
-  if (document.getElementById('screen-export').classList.contains('active')) renderMonthGrid();
-});
+async function fbRemove(path, key) {
+  const r = await fetch(DB_URL + '/' + path + '/' + key + '.json', { method: 'DELETE' });
+  if (!r.ok) throw new Error('delete failed');
+  await loadAll();
+}
 
-window._fbPushTrip      = d => push(tripsRef,     { ...d, createdAt: Date.now() });
-window._fbPushExpense   = d => push(expensesRef,  { ...d, createdAt: Date.now() });
-window._fbPushPurchase  = d => push(purchasesRef, { ...d, createdAt: Date.now() });
-window._fbRemoveTrip     = k => remove(ref(db, 'applications/' + k));
-window._fbRemoveExpense  = k => remove(ref(db, 'expenses/' + k));
-window._fbRemovePurchase = k => remove(ref(db, 'purchases/' + k));
+window._fbPushTrip      = d => fbPush('applications', d);
+window._fbPushExpense   = d => fbPush('expenses', d);
+window._fbPushPurchase  = d => fbPush('purchases', d);
+window._fbRemoveTrip     = k => fbRemove('applications', k);
+window._fbRemoveExpense  = k => fbRemove('expenses', k);
+window._fbRemovePurchase = k => fbRemove('purchases', k);
 window._getTrips      = () => trips;
 window._getExpenses   = () => expenses;
 window._getPurchases  = () => purchases;
@@ -457,7 +454,12 @@ window._getNameAmount = () => NAME_AMOUNT;
 window._getSelectedMonth = () => selectedMonth;
 window._setSelectedMonth = v => { selectedMonth = v; };
 
-initYearSelect();
+// initYearSelect and loadAll called after DOM scripts load
+window._initApp = function() {
+  initYearSelect();
+  loadAll();
+  setInterval(loadAll, 30000);
+};
 </script>
 
 <script>
@@ -828,6 +830,7 @@ function showToast(msg) {
 }
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+if (window._initApp) window._initApp();
 </script>
 </body>
 </html>
