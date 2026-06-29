@@ -1,11 +1,11 @@
 {
-  "name": "出張申請",
-  "short_name": "出張申請",
-  "description": "出張旅費申請システム",
+  "name": "株式会社KANETAKA",
+  "short_name": "KANETAKA",
+  "description": "株式会社KANETAKA 業務管理システム",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
   "orientation": "portrait",
   "icons": [
     {
