@@ -475,9 +475,10 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
     <div class="field" style="padding-top:16px">
       <div class="field-label">JANコード</div>
       <div style="display:flex;gap:8px">
-        <input type="text" id="inv-jan" placeholder="スキャンまたは手入力" style="flex:1">
+        <input type="text" id="inv-jan" placeholder="スキャンまたは手入力" style="flex:1" oninput="lookupJan()">
         <button class="btn btn-secondary" style="flex:none;padding:12px 14px;font-size:13px" onclick="startScan('inv-jan')">📷</button>
       </div>
+      <div id="jan-lookup-status" style="font-size:12px;margin-top:6px;color:var(--text-muted)"></div>
     </div>
   </div>
   <div class="card">
@@ -806,6 +807,40 @@ async function loadInventory() {
   } catch(e) { console.error('inventory load error', e); }
 }
 
+const YAHOO_CLIENT_ID = "dmVyPTIwMjUwNyZpZD1oZWl6dUs1MUZSJmhhc2g9TXpOak5qSTNNREkzTkRCaVl6UTVaQQ";
+
+async function lookupJan() {
+  const jan = document.getElementById('inv-jan').value.trim();
+  const status = document.getElementById('jan-lookup-status');
+  if (jan.length < 8) { status.textContent = ''; return; }
+  status.textContent = '🔍 商品情報を検索中...';
+  status.style.color = 'var(--text-muted)';
+  try {
+    const url = `https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?appid=${YAHOO_CLIENT_ID}&jan_code=${jan}&results=1&output=json`;
+    const r = await fetch(url);
+    const d = await r.json();
+    const hits = d?.hits;
+    if (hits && hits.length > 0) {
+      const item = hits[0];
+      const name = item.name || '';
+      const brand = item.brand?.name || '';
+      const model = item.janCode || jan;
+      // Fill in fields
+      if (name) document.getElementById('inv-name').value = name;
+      if (brand) document.getElementById('inv-maker').value = brand;
+      document.getElementById('inv-model').value = model;
+      status.textContent = '✅ 商品情報を取得しました！';
+      status.style.color = 'var(--success)';
+    } else {
+      status.textContent = '⚠ 商品が見つかりませんでした。手入力してください。';
+      status.style.color = 'var(--warning)';
+    }
+  } catch(e) {
+    status.textContent = '⚠ 検索に失敗しました。手入力してください。';
+    status.style.color = 'var(--warning)';
+  }
+}
+
 async function submitProduct() {
   const name  = document.getElementById('inv-name').value.trim();
   const stock = document.getElementById('inv-stock').value;
@@ -986,6 +1021,7 @@ function startScan(targetId) {
               document.getElementById(scanTarget).value = codes[0].rawValue;
               stopScan();
               if (scanTarget === 'move-jan') lookupProduct();
+              if (scanTarget === 'inv-jan') lookupJan();
             }
           } catch(e) {}
         }, 500);
