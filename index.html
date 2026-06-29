@@ -390,7 +390,7 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
 
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-import { getDatabase, ref, push, onValue, remove } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
+import { getDatabase, ref, push, onValue, remove, query, orderByKey } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
 
 const firebaseConfig = {
   databaseURL: "https://trip-app-a1746-default-rtdb.asia-southeast1.firebasedatabase.app"
@@ -413,7 +413,7 @@ onValue(ref(db, '.info/connected'), snap => {
   document.getElementById('sync-status').textContent = online ? 'リアルタイム同期中' : 'オフライン';
 });
 
-onValue(tripsRef, snap => {
+onValue(query(tripsRef, orderByKey()), snap => {
   trips = [];
   snap.forEach(c => trips.push({ _key: c.key, ...c.val() }));
   trips.sort((a, b) => { const da = b.createdAt || b.date || 0; const db = a.createdAt || a.date || 0; return da > db ? 1 : da < db ? -1 : 0; });
@@ -423,7 +423,7 @@ onValue(tripsRef, snap => {
   document.getElementById('list-loading').style.display = 'none';
 });
 
-onValue(expensesRef, snap => {
+onValue(query(expensesRef, orderByKey()), snap => {
   expenses = [];
   snap.forEach(c => expenses.push({ _key: c.key, ...c.val() }));
   console.log('Firebase expenses loaded:', expenses.length);
@@ -433,7 +433,7 @@ onValue(expensesRef, snap => {
   if (document.getElementById('screen-export').classList.contains('active')) renderMonthGrid();
 });
 
-onValue(purchasesRef, snap => {
+onValue(query(purchasesRef, orderByKey()), snap => {
   purchases = [];
   snap.forEach(c => purchases.push({ _key: c.key, ...c.val() }));
   purchases.sort((a, b) => { const da = b.date || ''; const db = a.date || ''; return da > db ? 1 : da < db ? -1 : 0; });
