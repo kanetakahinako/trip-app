@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="KANETAKA">
-<meta name="theme-color" content="#c5e8e5">
+<meta name="theme-color" content="#e8e8e8">
 <title>株式会社KANETAKA</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -14,27 +14,27 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --gold: #c9a84c;
-  --gold-light: #e8c96a;
-  --gold-dark: #a07830;
-  --gold-bg: #fdf8ee;
+  --gold: #b8b8b8;
+  --gold-light: #d8d8d8;
+  --gold-dark: #909090;
+  --gold-bg: #f0f0f0;
   --black: #1a1a1a;
   --dark: #2c2c2c;
-  --blue: #c9a84c;
-  --blue-light: #fdf8ee;
+  --blue: #a8a8a8;
+  --blue-light: #f0f0f0;
   --green: #16a34a; --green-bg: #f0fdf4;
-  --purple: #7c3aed; --purple-bg: #f5f3ff;
-  --orange: #ea580c; --orange-bg: #fff7ed;
+  --purple: #6d28d9; --purple-bg: #f5f3ff;
+  --orange: #c2410c; --orange-bg: #fff7ed;
   --teal: #0f766e; --teal-bg: #f0fdfa; --teal-light: #99f6e4;
   --text: #1a1a1a; --text-sub: #6b7280; --text-muted: #9ca3af;
-  --border: #e5e7eb; --surface: #edf8f7; --white: #ffffff;
+  --border: #d8d8d8; --surface: #f2f2f2; --white: #ffffff;
   --success: #16a34a; --success-bg: #f0fdf4;
   --danger: #dc2626; --danger-bg: #fef2f2;
   --warning-bg: #fffbeb; --warning: #d97706;
   --radius: 12px; --radius-sm: 8px;
 }
 html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; background: var(--surface); color: var(--text); -webkit-font-smoothing: antialiased; }
-.login-screen { position: fixed; inset: 0; z-index: 500; background: linear-gradient(135deg, #c5e8e5, #a8d8d4); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.login-screen { position: fixed; inset: 0; z-index: 500; background: linear-gradient(160deg, #e8e8e8, #d8d8d8); display: flex; align-items: center; justify-content: center; padding: 24px; }
 .login-box { background: var(--white); border-radius: 20px; padding: 40px 28px; width: 100%; max-width: 360px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); text-align: center; }
 .login-logo { width: 64px; height: 64px; border-radius: 14px; margin: 0 auto 16px; object-fit: cover; }
 .login-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
@@ -45,19 +45,19 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Hira
 .login-field input:focus { border-color: var(--gold); }
 .login-error { color: var(--danger); font-size: 13px; margin-bottom: 12px; display: none; }
 .login-error.show { display: block; }
-.login-btn { width: 100%; padding: 15px; background: linear-gradient(135deg, var(--gold-light), var(--gold-dark)); color: var(--black); border: none; border-radius: var(--radius-sm); font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 8px; }
+.login-btn { width: 100%; padding: 15px; background: linear-gradient(135deg, #d8d8d8, #a8a8a8); color: #1a1a1a; border: none; border-radius: var(--radius-sm); font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 8px; }
 .login-btn:disabled { opacity: 0.6; }
-.header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(135deg, #c5e8e5, #a8d8d4); color: var(--black); padding: env(safe-area-inset-top, 0) 0 0; border-bottom: 2px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(135deg, #b0b0b0, #a0a0a0); color: var(--black); padding: env(safe-area-inset-top, 0) 0 0; border-bottom: 2px solid #c8c8c8; box-shadow: 0 2px 12px rgba(0,0,0,0.12); }
 .header-inner { display: flex; align-items: center; gap: 12px; padding: 10px 16px; }
 .header-logo { width: 36px; height: 36px; border-radius: 8px; object-fit: cover; }
 .header-text { flex: 1; }
-.header-title { font-size: 15px; font-weight: 700; color: var(--gold-dark); letter-spacing: 0.05em; }
-.header-sub { font-size: 11px; color: var(--gold); margin-top: 1px; }
+.header-title { font-size: 15px; font-weight: 700; color: #3a3a3a; letter-spacing: 0.05em; }
+.header-sub { font-size: 11px; color: #707070; margin-top: 1px; }
 .sync-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; display: inline-block; margin-left: 5px; }
 .sync-dot.offline { background: #f87171; }
-.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(135deg, #c5e8e5, #a8d8d4); border-top: 2px solid var(--gold); display: flex; padding-bottom: env(safe-area-inset-bottom, 0); box-shadow: 0 -2px 12px rgba(0,0,0,0.08); }
-.nav-btn { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 8px 0 6px; background: none; border: none; cursor: pointer; color: #b8a070; font-size: 9px; font-weight: 500; -webkit-tap-highlight-color: transparent; }
-.nav-btn.active { color: var(--gold-light); }
+.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(135deg, #b0b0b0, #a0a0a0); border-top: 2px solid #c8c8c8; display: flex; padding-bottom: env(safe-area-inset-bottom, 0); box-shadow: 0 -2px 12px rgba(0,0,0,0.12); }
+.nav-btn { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 8px 0 6px; background: none; border: none; cursor: pointer; color: #4a4a4a; font-size: 9px; font-weight: 500; -webkit-tap-highlight-color: transparent; }
+.nav-btn.active { color: #f0f0f0; }
 .nav-btn svg { width: 22px; height: 22px; stroke-width: 1.8; }
 .nav-badge { position: absolute; top: 4px; right: calc(50% - 20px); background: var(--danger); color: #fff; font-size: 9px; font-weight: 700; border-radius: 20px; padding: 1px 4px; min-width: 14px; text-align: center; display: none; }
 .nav-btn-wrap { position: relative; flex: 1; display: flex; justify-content: center; }
@@ -78,7 +78,7 @@ select, input[type="date"], input[type="text"], input[type="number"], textarea {
 select:focus, input:focus, textarea:focus { border-color: var(--gold); }
 select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
 textarea { resize: none; height: 72px; line-height: 1.5; }
-.amount-display { width: 100%; padding: 13px 14px; font-size: 22px; font-weight: 700; color: var(--gold-dark); border: 1.5px solid var(--gold); border-radius: var(--radius-sm); background: var(--gold-bg); text-align: center; }
+.amount-display { width: 100%; padding: 13px 14px; font-size: 22px; font-weight: 700; color: #2a2a2a; border: 1.5px solid #b0b0b0; border-radius: var(--radius-sm); background: #f0f0f0; text-align: center; }
 .alert { display: none; margin: 0 16px 12px; padding: 12px 14px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; align-items: center; gap: 8px; }
 .alert.show { display: flex; }
 .alert.success { background: var(--success-bg); color: var(--success); }
@@ -87,17 +87,17 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
 .btn-row { display: flex; gap: 10px; padding: 16px; }
 .btn { flex: 1; padding: 15px; font-size: 16px; font-weight: 600; font-family: inherit; border-radius: var(--radius-sm); border: none; cursor: pointer; transition: transform 0.1s, opacity 0.15s; -webkit-tap-highlight-color: transparent; }
 .btn:active { transform: scale(0.97); }
-.btn-primary { background: #bfdbfe; color: #1e3a5f; border: none; }
+.btn-primary { background: linear-gradient(135deg, #d8d8d8, #a8a8a8); color: #1a1a1a; border: none; }
 .btn-secondary { background: var(--surface); color: var(--text); border: 1.5px solid var(--border); }
 .btn-green { background: #bbf7d0; color: #14532d; border: none; }
-.btn-purple { background: #ddd6fe; color: #4c1d95; border: none; }
-.btn-orange { background: #fed7aa; color: #7c2d12; border: none; }
-.btn-teal { background: #fbcfe8; color: #831843; border: none; }
+.btn-purple { background: linear-gradient(135deg, #d8d8d8, #a8a8a8); color: #1a1a1a; border: none; }
+.btn-orange { background: linear-gradient(135deg, #d8d8d8, #a8a8a8); color: #1a1a1a; border: none; }
+.btn-teal { background: linear-gradient(135deg, #d8d8d8, #a8a8a8); color: #1a1a1a; border: none; }
 .status-sales { background: #fce7f3; color: #9d174d; }
 .status-unpaid { background: #fef2f2; color: #dc2626; }
 .status-paid { background: #f0fdf4; color: #16a34a; }
 .btn-pink { background: #fbcfe8; color: #831843; border: none; }
-.btn-gold { background: linear-gradient(135deg, var(--gold-light), var(--gold-dark)); color: var(--black); font-weight: 700; border: none; }
+.btn-gold { background: linear-gradient(135deg, #d8d8d8, #a0a0a0); color: #1a1a1a; font-weight: 700; border: none; }
 .list-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
 .list-count { font-size: 14px; color: var(--text-sub); font-weight: 500; }
 .trip-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
@@ -114,7 +114,7 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
 .trip-dest { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
 .trip-purpose { font-size: 13px; color: var(--text-sub); margin-bottom: 10px; }
 .trip-footer { display: flex; align-items: center; justify-content: space-between; }
-.trip-amount { font-size: 18px; font-weight: 700; color: var(--gold-dark); }
+.trip-amount { font-size: 18px; font-weight: 700; color: #4a4a4a; }
 .delete-btn { padding: 6px 12px; background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; color: var(--danger); cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
 .empty-state svg { width: 48px; height: 48px; margin-bottom: 12px; opacity: 0.3; }
@@ -124,7 +124,7 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
 .month-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
 .month-btn { padding: 12px 4px; background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; color: var(--text-sub); cursor: pointer; text-align: center; -webkit-tap-highlight-color: transparent; transition: all 0.15s; }
 .month-btn.has-data { border-color: var(--gold); color: var(--gold-dark); background: var(--gold-bg); }
-.month-btn.selected { background: linear-gradient(135deg, var(--gold-light), var(--gold-dark)); color: var(--black); border-color: var(--gold); }
+.month-btn.selected { background: linear-gradient(135deg, #d8d8d8, #a0a0a0); color: #1a1a1a; border-color: #b8b8b8; }
 .month-btn.no-data { opacity: 0.4; cursor: default; }
 .preview-box { background: var(--surface); border-radius: var(--radius-sm); border: 1px solid var(--border); padding: 14px; margin-bottom: 14px; }
 .accordion-header { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding: 10px 0; border-bottom: 1px solid var(--border); user-select: none; -webkit-tap-highlight-color: transparent; }
@@ -155,9 +155,9 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
 .tab-switch { display: flex; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 3px; margin-bottom: 16px; gap: 2px; }
 .tab-switch-btn { flex: 1; padding: 7px 4px; font-size: 12px; font-weight: 600; border: none; background: none; border-radius: 6px; cursor: pointer; color: var(--text-muted); -webkit-tap-highlight-color: transparent; }
 .tab-switch-btn.active { background: var(--white); color: var(--gold-dark); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-.mode-switch { display: flex; background: rgba(255,255,255,0.4); border-radius: 20px; padding: 2px; margin-left: auto; border: 1px solid var(--gold); }
-.mode-btn { padding: 5px 10px; border: none; border-radius: 18px; font-size: 11px; font-weight: 600; cursor: pointer; background: none; color: var(--gold-dark); -webkit-tap-highlight-color: transparent; }
-.mode-btn.active { background: var(--gold); color: var(--black); }
+.mode-switch { display: flex; background: rgba(255,255,255,0.4); border-radius: 20px; padding: 2px; margin-left: auto; border: 1px solid #a0a0a0; }
+.mode-btn { padding: 5px 10px; border: none; border-radius: 18px; font-size: 11px; font-weight: 600; cursor: pointer; background: none; color: #505050; -webkit-tap-highlight-color: transparent; }
+.mode-btn.active { background: #c0c0c0; color: #1a1a1a; }
 .inv-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
 .inv-card-img { width: 72px; height: 72px; object-fit: cover; border-radius: 6px; background: var(--surface); flex-shrink: 0; }
 .inv-card-body { display: flex; gap: 12px; padding: 12px 14px; }
@@ -181,7 +181,7 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
 .ptr-indicator.active { height: 50px; }
 .ptr-spinner { width: 24px; height: 24px; border: 3px solid var(--border); border-top-color: var(--gold); border-radius: 50%; }
 .ptr-spinner.spinning { animation: spin 0.8s linear infinite; }
-.toast { position: fixed; bottom: calc(env(safe-area-inset-bottom, 0px) + 76px); left: 16px; right: 16px; background: linear-gradient(135deg, #c5e8e5, #a8d8d4); color: var(--gold-dark); padding: 14px 16px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; text-align: center; z-index: 200; opacity: 0; transform: translateY(10px); transition: opacity 0.2s, transform 0.2s; pointer-events: none; border: 2px solid var(--gold); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.toast { position: fixed; bottom: calc(env(safe-area-inset-bottom, 0px) + 76px); left: 16px; right: 16px; background: linear-gradient(135deg, #c8c8c8, #b0b0b0); color: #1a1a1a; padding: 14px 16px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; text-align: center; z-index: 200; opacity: 0; transform: translateY(10px); transition: opacity 0.2s, transform 0.2s; pointer-events: none; border: 1px solid #a0a0a0; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
 .toast.show { opacity: 1; transform: translateY(0); }
 </style>
 </head>
@@ -195,13 +195,34 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
     <div class="login-error" id="login-error">メールアドレスまたはパスワードが正しくありません</div>
     <div class="login-field">
       <label>メールアドレス</label>
-      <input type="email" id="login-email" placeholder="office@kanetaka.net" autocomplete="username">
+      <input type="email" id="login-email" placeholder="メールアドレスを入力" autocomplete="username">
     </div>
     <div class="login-field">
       <label>パスワード</label>
       <input type="password" id="login-password" placeholder="パスワード" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
     </div>
     <button class="login-btn" id="login-btn" onclick="doLogin()">ログイン</button>
+    <div style="text-align:center;margin-top:16px">
+      <a href="#" onclick="showResetModal();return false;" style="font-size:13px;color:var(--gold-dark);text-decoration:none">パスワードを忘れた方はこちら</a>
+    </div>
+  </div>
+</div>
+
+<!-- パスワードリセットモーダル -->
+<div id="reset-modal" style="display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;padding:24px">
+  <div style="background:var(--white);border-radius:20px;padding:32px 28px;width:100%;max-width:360px;box-shadow:0 20px 60px rgba(0,0,0,0.2)">
+    <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px">パスワードリセット</div>
+    <div style="font-size:13px;color:var(--text-sub);margin-bottom:20px">登録済みのメールアドレスにリセット用リンクを送信します</div>
+    <div id="reset-error" style="display:none;color:var(--danger);font-size:13px;margin-bottom:12px"></div>
+    <div id="reset-success" style="display:none;background:var(--success-bg);color:var(--success);font-size:13px;padding:10px 12px;border-radius:8px;margin-bottom:12px"></div>
+    <div style="margin-bottom:16px">
+      <label style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;display:block">メールアドレス</label>
+      <input type="email" id="reset-email" placeholder="メールアドレスを入力" style="width:100%;padding:13px 14px;font-size:16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);outline:none">
+    </div>
+    <div style="display:flex;gap:10px">
+      <button onclick="closeResetModal()" style="flex:1;padding:13px;background:var(--surface);color:var(--text);border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:15px;cursor:pointer">キャンセル</button>
+      <button id="reset-btn" onclick="doReset()" style="flex:1;padding:13px;background:linear-gradient(135deg,#d8d8d8,#a0a0a0);color:#1a1a1a;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:700;cursor:pointer">送信</button>
+    </div>
   </div>
 </div>
 
@@ -347,8 +368,10 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
         <div style="font-size:12px; color:var(--text-muted); margin-top:6px; text-align:right;">円（税込）</div>
       </div>
     </div>
+    <div id="exp-day-summary" style="display:none;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--purple-bg);border-radius:var(--radius-sm);margin:0 16px 8px;font-size:13px;gap:12px"></div>
     <div class="btn-row">
-      <button class="btn btn-purple" onclick="submitExpense()">経費を登録する</button>
+      <button class="btn btn-secondary" onclick="resetExpDay()">日付リセット</button>
+      <button class="btn btn-purple" onclick="submitExpense()">追加登録する</button>
     </div>
   </div>
 
@@ -387,8 +410,10 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
         <input type="text" id="pur-note" placeholder="領収書番号など（任意）">
       </div>
     </div>
+    <div id="pur-day-summary" style="display:none;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--orange-bg);border-radius:var(--radius-sm);margin:0 16px 8px;font-size:13px;gap:12px"></div>
     <div class="btn-row">
-      <button class="btn btn-orange" onclick="submitPurchase()">仕入を登録する</button>
+      <button class="btn btn-secondary" onclick="resetPurDay()">日付リセット</button>
+      <button class="btn btn-orange" onclick="submitPurchase()">追加登録する</button>
     </div>
   </div>
 
@@ -463,6 +488,7 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
       <button class="tab-switch-btn" id="list-tab-expense" onclick="switchListTab('expense')">💴 経費</button>
       <button class="tab-switch-btn" id="list-tab-purchase" onclick="switchListTab('purchase')">🛒 仕入</button>
       <button class="tab-switch-btn" id="list-tab-sales" onclick="switchListTab('sales')">💹 売上</button>
+      <button class="tab-switch-btn" id="list-tab-chart" onclick="switchListTab('chart')">📊 グラフ</button>
     </div>
     <div class="list-toolbar">
       <div class="list-count" id="list-count">0件</div>
@@ -487,13 +513,75 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
       <div id="preview-area" style="display:none">
         <div class="preview-box" id="preview-box"></div>
         <div class="export-btn-grid">
-          <button class="btn btn-primary" onclick="doExportTrip()">✈ 出張Excel</button>
-          <button class="btn btn-purple" onclick="doExportExpense()">💴 経費Excel</button>
-          <button class="btn btn-orange" onclick="doExportPurchase()">🛒 仕入Excel</button>
-          <button class="btn btn-teal" onclick="doExportSales()">💹 売上Excel</button>
+          <button class="btn" style="background:none;border:1.5px solid #c8c8c8;color:#787878;font-weight:600" onclick="doExportTrip()">✈ 出張Excel</button>
+          <button class="btn" style="background:none;border:1.5px solid #c8c8c8;color:#787878;font-weight:600" onclick="doExportExpense()">💴 経費Excel</button>
+          <button class="btn" style="background:none;border:1.5px solid #c8c8c8;color:#787878;font-weight:600" onclick="doExportPurchase()">🛒 仕入Excel</button>
+          <button class="btn" style="background:none;border:1.5px solid #c8c8c8;color:#787878;font-weight:600" onclick="doExportSales()">💹 売上Excel</button>
         </div>
       </div>
       <div id="no-data-msg" style="display:none; text-align:center; padding:20px; color:var(--text-muted); font-size:14px;">この月のデータがありません</div>
+    </div>
+  </div>
+
+<!-- 設定スクリーン -->
+  <div id="screen-settings" class="screen">
+    <div class="card">
+      <div class="card-title">アカウント情報</div>
+      <div class="field">
+        <div class="field-label">現在のメールアドレス</div>
+        <div id="current-email-display" style="padding:13px 14px;font-size:15px;font-weight:600;color:var(--text);background:var(--surface);border-radius:var(--radius-sm);border:1.5px solid var(--border)">—</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">メールアドレスを変更する</div>
+      <div id="settings-alert" class="alert" style="margin:0 16px 12px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span id="settings-alert-msg"></span>
+      </div>
+      <div class="field">
+        <div class="field-label">現在のパスワード <span class="req">*</span></div>
+        <input type="password" id="settings-current-pw" placeholder="現在のパスワードを入力">
+      </div>
+      <div class="field-divider"></div>
+      <div class="field" style="padding-top:16px">
+        <div class="field-label">新しいメールアドレス <span class="req">*</span></div>
+        <input type="email" id="settings-new-email" placeholder="新しいメールアドレスを入力">
+      </div>
+      <div class="field-divider"></div>
+      <div class="field" style="padding-top:16px">
+        <div class="field-label">確認（もう一度入力） <span class="req">*</span></div>
+        <input type="email" id="settings-new-email2" placeholder="新しいメールアドレスを再入力">
+      </div>
+      <div class="btn-row">
+        <button onclick="doChangeEmail()" style="flex:1;padding:15px;background:linear-gradient(135deg,#d8d8d8,#a8a8a8);color:#1a1a1a;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:700;cursor:pointer">メールアドレスを変更する</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">パスワードを変更する</div>
+      <div id="pw-change-alert" class="alert" style="margin:0 16px 12px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span id="pw-change-alert-msg"></span>
+      </div>
+      <div class="field">
+        <div class="field-label">現在のパスワード <span class="req">*</span></div>
+        <input type="password" id="settings-current-pw2" placeholder="現在のパスワードを入力">
+      </div>
+      <div class="field-divider"></div>
+      <div class="field" style="padding-top:16px">
+        <div class="field-label">新しいパスワード <span class="req">*</span></div>
+        <input type="password" id="settings-new-pw" placeholder="新しいパスワード（6文字以上）">
+      </div>
+      <div class="field-divider"></div>
+      <div class="field" style="padding-top:16px">
+        <div class="field-label">確認（もう一度入力） <span class="req">*</span></div>
+        <input type="password" id="settings-new-pw2" placeholder="新しいパスワードを再入力">
+      </div>
+      <div class="btn-row">
+        <button onclick="doChangePassword()" style="flex:1;padding:15px;background:linear-gradient(135deg,#d8d8d8,#a8a8a8);color:#1a1a1a;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:700;cursor:pointer">パスワードを変更する</button>
+      </div>
+    </div>
+    <div style="padding:0 16px 16px">
+      <button onclick="doLogout()" style="width:100%;padding:14px;background:none;border:1.5px solid #555555;border-radius:var(--radius-sm);color:#3a3a3a;font-size:15px;font-weight:600;cursor:pointer">ログアウト</button>
     </div>
   </div>
 
@@ -684,6 +772,12 @@ textarea { resize: none; height: 72px; line-height: 1.5; }
     <button class="nav-btn" id="nav-export" onclick="showScreen('export')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><polyline points="9 14 12 17 15 14"/></svg>
       月次出力
+    </button>
+  </div>
+  <div class="nav-btn-wrap">
+    <button class="nav-btn" id="nav-settings" onclick="showScreen('settings')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      設定
     </button>
   </div>
 </div>
@@ -1154,11 +1248,11 @@ function handleName() {
   if (name && NA[name] !== undefined) {
     amt.value = NA[name];
     disp.textContent = '¥' + NA[name].toLocaleString('ja-JP');
-    disp.style.color = 'var(--gold-dark)';
+    disp.style.color = '#2a2a2a';
   } else {
     amt.value = '';
     disp.textContent = '氏名を選択してください';
-    disp.style.color = 'var(--text-muted)';
+    disp.style.color = '#2a2a2a';
   }
 }
 
@@ -1186,7 +1280,7 @@ function clearTripForm() {
   document.getElementById('purpose-other').value = '';
   document.getElementById('amount').value = '';
   document.getElementById('amount-display').textContent = '氏名を選択してください';
-  document.getElementById('amount-display').style.color = 'var(--text-muted)';
+  document.getElementById('amount-display').style.color = '#2a2a2a';
   document.getElementById('memo').value = '';
   document.getElementById('other-wrap').style.display = 'none';
 }
@@ -1214,18 +1308,42 @@ function getExpenseData() {
   return { type:'expense', date, payee, category: category === 'other' ? 'その他' : category, note, content, amount: parseInt(amount,10), submittedAt: new Date().toLocaleDateString('ja-JP') };
 }
 
-function clearExpenseForm() {
-  document.getElementById('exp-date').value = '';
+function clearExpenseForm(keepDate) {
+  if (!keepDate) document.getElementById('exp-date').value = '';
   document.getElementById('exp-payee').value = '';
   document.getElementById('exp-category').selectedIndex = 0;
   document.getElementById('exp-note').value = '';
   document.getElementById('exp-amount').value = '';
 }
 
+let _expDayCount = 0;
+let _expDayTotal = 0;
+
 async function submitExpense() {
   const data = getExpenseData();
   if (!data) { showAlert('exp-alert-box','exp-alert-msg','必須項目をすべて入力してください','error'); return; }
-  try { await window._fbPushExpense(data); clearExpenseForm(); showToast('経費を登録しました'); } catch(e) { showAlert('exp-alert-box','exp-alert-msg','登録に失敗しました','error'); }
+  try {
+    await window._fbPushExpense(data);
+    _expDayCount++;
+    _expDayTotal += data.amount;
+    clearExpenseForm(true); // 日付はキープ
+    updateExpDaySummary();
+    showToast('登録しました（本日 ' + _expDayCount + '件 合計 ¥' + _expDayTotal.toLocaleString('ja-JP') + '）');
+  } catch(e) { showAlert('exp-alert-box','exp-alert-msg','登録に失敗しました','error'); }
+}
+
+function updateExpDaySummary() {
+  let el = document.getElementById('exp-day-summary');
+  if (!el) return;
+  if (_expDayCount === 0) { el.style.display = 'none'; return; }
+  el.style.display = 'flex';
+  el.innerHTML = `<span>本日 <b>${_expDayCount}件</b></span><span>小計 <b style="color:var(--purple)">¥${_expDayTotal.toLocaleString('ja-JP')}</b></span><button onclick="resetExpDay()" style="background:none;border:none;font-size:11px;color:var(--text-muted);cursor:pointer;padding:0">リセット</button>`;
+}
+
+function resetExpDay() {
+  _expDayCount = 0; _expDayTotal = 0;
+  updateExpDaySummary();
+  clearExpenseForm(false);
 }
 
 function getPurchaseData() {
@@ -1237,17 +1355,41 @@ function getPurchaseData() {
   return { type:'purchase', date, supplier, amount: parseInt(amount,10), note, submittedAt: new Date().toLocaleDateString('ja-JP') };
 }
 
-function clearPurchaseForm() {
-  document.getElementById('pur-date').value = '';
+function clearPurchaseForm(keepDate) {
+  if (!keepDate) document.getElementById('pur-date').value = '';
   document.getElementById('pur-supplier').selectedIndex = 0;
   document.getElementById('pur-amount').value = '';
   document.getElementById('pur-note').value = '';
 }
 
+let _purDayCount = 0;
+let _purDayTotal = 0;
+
 async function submitPurchase() {
   const data = getPurchaseData();
   if (!data) { showAlert('pur-alert-box','pur-alert-msg','必須項目をすべて入力してください','error'); return; }
-  try { await window._fbPushPurchase(data); clearPurchaseForm(); showToast('仕入を登録しました'); } catch(e) { showAlert('pur-alert-box','pur-alert-msg','登録に失敗しました','error'); }
+  try {
+    await window._fbPushPurchase(data);
+    _purDayCount++;
+    _purDayTotal += data.amount;
+    clearPurchaseForm(true); // 日付はキープ
+    updatePurDaySummary();
+    showToast('登録しました（本日 ' + _purDayCount + '件 合計 ¥' + _purDayTotal.toLocaleString('ja-JP') + '）');
+  } catch(e) { showAlert('pur-alert-box','pur-alert-msg','登録に失敗しました','error'); }
+}
+
+function updatePurDaySummary() {
+  let el = document.getElementById('pur-day-summary');
+  if (!el) return;
+  if (_purDayCount === 0) { el.style.display = 'none'; return; }
+  el.style.display = 'flex';
+  el.innerHTML = `<span>本日 <b>${_purDayCount}件</b></span><span>小計 <b style="color:var(--orange)">¥${_purDayTotal.toLocaleString('ja-JP')}</b></span><button onclick="resetPurDay()" style="background:none;border:none;font-size:11px;color:var(--text-muted);cursor:pointer;padding:0">リセット</button>`;
+}
+
+function resetPurDay() {
+  _purDayCount = 0; _purDayTotal = 0;
+  updatePurDaySummary();
+  clearPurchaseForm(false);
 }
 
 function handleSalType() {
@@ -1294,104 +1436,489 @@ async function deleteSales(key) {
 
 function switchListTab(tab) {
   currentListTab = tab;
-  ['trip','expense','purchase','sales'].forEach(t => { const el = document.getElementById('list-tab-'+t); if(el) el.classList.toggle('active', t === tab); });
+  ['trip','expense','purchase','sales','chart'].forEach(t => {
+    const el = document.getElementById('list-tab-' + t);
+    if (el) el.classList.toggle('active', t === tab);
+  });
   renderList();
+}
+
+// ── ユーティリティ ──
+function groupByMonth(items) {
+  const map = {};
+  items.forEach(item => {
+    const key = item.date ? item.date.slice(0,7) : '不明';
+    if (!map[key]) map[key] = [];
+    map[key].push(item);
+  });
+  return Object.keys(map).sort((a,b) => b.localeCompare(a)).map(k => ({ month: k, items: map[k] }));
+}
+function groupByDay(items) {
+  const map = {};
+  items.forEach(item => {
+    const key = item.date || '不明';
+    if (!map[key]) map[key] = [];
+    map[key].push(item);
+  });
+  return Object.keys(map).sort((a,b) => b.localeCompare(a)).map(k => ({ date: k, items: map[k] }));
+}
+function fmtYM(ym) {
+  if (!ym || ym.length < 7) return ym;
+  return ym.slice(0,4) + '年' + parseInt(ym.slice(5,7)) + '月';
+}
+function fmtDate(d) {
+  if (!d || d.length < 10) return d;
+  return parseInt(d.slice(5,7)) + '月' + parseInt(d.slice(8,10)) + '日';
+}
+function yen(n) { return '¥' + (n||0).toLocaleString('ja-JP'); }
+
+// ── レンダリング ──
+// ── インライン編集ヘルパー ──
+const TRIP_DESTS = ['愛知県内','飛島','飛島ー愛知県内','飛島ー岐阜','岐阜','埼玉'];
+const TRIP_PURPOSES = ['商品仕入','商品卸し','商品仕入・商品卸し','サロン生同行'];
+const EXP_CATS = ['パーキング','タクシー','定期','ガソリン','配送','備品・業務用品','贈答品','会議費','接待交際費','その他'];
+const PUR_SUPS = ['店舗','電脳','（株）HAK','（株）GAIN'];
+const DOM_CLIENTS = ['昇輝株式会社','株式会社RISE','ピュアクリエイト株式会社','東谷株式会社','株式会社グルラジトレイディングコーポレイション','株式会社サプライズ','エル・ダブル株式会社','環盛株式会社','株式会社HAK'];
+const OVS_CLIENTS = ['ANGCO INTERNATIONAL TRADING COMPANY（香港）'];
+const NAMES_LIST = ['金髙孝紀','金髙裕亮'];
+const NAME_AMT = {'金髙孝紀':20000,'金髙裕亮':10000};
+
+function sel(options, current, id) {
+  return `<select id="${id}" style="font-size:13px;padding:6px 8px;border:1.5px solid var(--gold);border-radius:6px;background:var(--white)">${options.map(o=>`<option value="${o}"${o===current?' selected':''}>${o}</option>`).join('')}</select>`;
+}
+function inp(val, id, type='text', placeholder='') {
+  return `<input id="${id}" type="${type}" value="${val||''}" placeholder="${placeholder}" style="font-size:13px;padding:6px 8px;border:1.5px solid var(--gold);border-radius:6px;width:100%;box-sizing:border-box">`;
+}
+function editBtnRow(saveFunc, cancelFunc) {
+  return `<div style="display:flex;gap:8px;margin-top:8px">
+    <button onclick="${saveFunc}" style="flex:1;padding:8px;background:#bfdbfe;color:#1e3a5f;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer">保存</button>
+    <button onclick="${cancelFunc}" style="flex:1;padding:8px;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:13px;cursor:pointer">キャンセル</button>
+  </div>`;
+}
+
+// ── 表示行⇔編集行の切り替え ──
+function openEditRow(rowId) {
+  const view = document.getElementById('view_' + rowId);
+  const edit = document.getElementById('edit_' + rowId);
+  if (view) view.style.display = 'none';
+  if (edit) edit.style.display = 'block';
+}
+function closeEditRow(rowId) {
+  const view = document.getElementById('view_' + rowId);
+  const edit = document.getElementById('edit_' + rowId);
+  if (view) view.style.display = 'block';
+  if (edit) edit.style.display = 'none';
+}
+
+// ── 各タイプの保存処理 ──
+async function saveTrip(key, rowId) {
+  const name = document.getElementById('et_name_'+rowId).value;
+  const date = document.getElementById('et_date_'+rowId).value;
+  const dest = document.getElementById('et_dest_'+rowId).value;
+  const purpose = document.getElementById('et_purpose_'+rowId).value;
+  const status = document.getElementById('et_status_'+rowId).value;
+  const amount = NAME_AMT[name] || parseInt(document.getElementById('et_amount_'+rowId).value)||0;
+  if (!name||!date||!dest||!purpose) { showToast('必須項目を入力してください'); return; }
+  try {
+    await fetch(authedUrl('/applications/'+key+'.json'), {method:'PATCH', body:JSON.stringify({name,date,dest,purpose,status,amount})});
+    await loadAll(); showToast('更新しました');
+  } catch(e) { showToast('更新に失敗しました'); }
+}
+async function saveExpense(key, rowId) {
+  const date = document.getElementById('ee_date_'+rowId).value;
+  const payee = document.getElementById('ee_payee_'+rowId).value.trim();
+  const category = document.getElementById('ee_cat_'+rowId).value;
+  const note = document.getElementById('ee_note_'+rowId).value.trim();
+  const amount = parseInt(document.getElementById('ee_amount_'+rowId).value)||0;
+  if (!date||!payee||!category||!amount) { showToast('必須項目を入力してください'); return; }
+  const content = category==='その他'?(note||'その他'):category+(note?'（'+note+'）':'');
+  try {
+    await fetch(authedUrl('/expenses/'+key+'.json'), {method:'PATCH', body:JSON.stringify({date,payee,category,note,content,amount})});
+    await loadAll(); showToast('更新しました');
+  } catch(e) { showToast('更新に失敗しました'); }
+}
+async function savePurchase(key, rowId) {
+  const date = document.getElementById('ep_date_'+rowId).value;
+  const supplier = document.getElementById('ep_sup_'+rowId).value;
+  const amount = parseInt(document.getElementById('ep_amount_'+rowId).value)||0;
+  const note = document.getElementById('ep_note_'+rowId).value.trim();
+  if (!date||!supplier||!amount) { showToast('必須項目を入力してください'); return; }
+  try {
+    await fetch(authedUrl('/purchases/'+key+'.json'), {method:'PATCH', body:JSON.stringify({date,supplier,amount,note})});
+    await loadAll(); showToast('更新しました');
+  } catch(e) { showToast('更新に失敗しました'); }
+}
+async function saveSales(key, rowId) {
+  const date = document.getElementById('es_date_'+rowId).value;
+  const salesType = document.getElementById('es_type_'+rowId).value;
+  const clientSel = document.getElementById('es_client_'+rowId);
+  const client = clientSel ? clientSel.value : '';
+  const amount = parseInt(document.getElementById('es_amount_'+rowId).value)||0;
+  const due = document.getElementById('es_due_'+rowId).value;
+  const note = document.getElementById('es_note_'+rowId).value.trim();
+  if (!date||!client||!amount) { showToast('必須項目を入力してください'); return; }
+  try {
+    await fetch(authedUrl('/sales/'+key+'.json'), {method:'PATCH', body:JSON.stringify({date,salesType,client,amount,due,note})});
+    await loadAll(); showToast('更新しました');
+  } catch(e) { showToast('更新に失敗しました'); }
+}
+function updateSalesClientOptions(rowId) {
+  const typeEl = document.getElementById('es_type_'+rowId);
+  const clientEl = document.getElementById('es_client_'+rowId);
+  if (!typeEl||!clientEl) return;
+  const clients = typeEl.value==='国内（請求書）' ? DOM_CLIENTS : OVS_CLIENTS;
+  clientEl.innerHTML = clients.map(c=>`<option value="${c}">${c}</option>`).join('');
 }
 
 function renderList() {
   const container = document.getElementById('list-container');
   const empty = document.getElementById('empty-state');
+  const countEl = document.getElementById('list-count');
   document.getElementById('list-loading').style.display = 'none';
+  empty.style.display = 'none';
+  container.innerHTML = '';
+
+  if (currentListTab === 'chart') {
+    countEl.textContent = '';
+    renderChart(container);
+    return;
+  }
+
+  // 共通ヘッダー（月セクション）
+  function monthHeader(month, total, color='#4a4a4a') {
+    return `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:linear-gradient(135deg,#c8c8c8,#b8b8b8);border-radius:10px;margin-bottom:8px;border:1px solid #a8a8a8">
+      <span style="font-size:13px;font-weight:700;color:#3a3a3a">${fmtYM(month)}</span>
+      <span style="font-size:13px;font-weight:700;color:${color}">${yen(total)}</span>
+    </div>`;
+  }
+  function dayHeader(uid, date, total, color='#4a4a4a') {
+    return `<div onclick="toggleDayGroup('${uid}')" style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;cursor:pointer;background:var(--surface)">
+      <span style="font-size:13px;font-weight:700;color:var(--text)">${fmtDate(date)}</span>
+      <span style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:13px;font-weight:700;color:${color}">${yen(total)}</span>
+        <span id="arr_${uid}" style="font-size:11px;color:var(--text-muted);transition:transform 0.2s">▼</span>
+      </span>
+    </div>`;
+  }
+  function actionBtns(editCall, delCall) {
+    return `<div style="display:flex;gap:6px;flex-shrink:0">
+      <button onclick="${editCall}" style="padding:5px 10px;background:#bfdbfe;color:#1e3a5f;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">編集</button>
+      <button class="delete-btn" onclick="${delCall}">削除</button>
+    </div>`;
+  }
+
   if (currentListTab === 'trip') {
     const items = window._getTrips ? window._getTrips() : [];
-    document.getElementById('list-count').textContent = items.length + '件';
-    if (!items.length) { container.innerHTML = ''; empty.style.display = 'block'; return; }
-    empty.style.display = 'none';
-    container.innerHTML = items.map(a => `
-      <div class="trip-card">
-        <div class="trip-card-head">
-          <div class="trip-meta"><span class="trip-date">${a.date}</span><span class="trip-name">${a.name}</span></div>
-          <span class="trip-status ${a.status==='申請中'?'status-pending':'status-draft'}">${a.status}</span>
-        </div>
-        <div class="trip-card-body">
-          <div class="trip-dest">${a.dest}</div>
-          <div class="trip-purpose">${a.purpose}</div>
-          <div class="trip-footer">
-            <div class="trip-amount">¥${a.amount.toLocaleString('ja-JP')}</div>
-            <button class="delete-btn" onclick="deleteTrip('${a._key}')">削除</button>
-          </div>
-        </div>
-      </div>`).join('');
+    countEl.textContent = items.length + '件';
+    if (!items.length) { empty.style.display = 'block'; return; }
+    const byMonth = groupByMonth(items);
+    container.innerHTML = byMonth.map(({ month, items: mi }) => {
+      const monthTotal = mi.reduce((s,a) => s+a.amount, 0);
+      const byDay = groupByDay(mi);
+      return `<div style="margin-bottom:20px">
+        ${monthHeader(month, monthTotal)}
+        ${byDay.map(({ date, items: di }, di_idx) => {
+          const dayTotal = di.reduce((s,a) => s+a.amount, 0);
+          const uid = 'trip_'+month.replace('-','')+'_'+di_idx;
+          return `<div style="margin-bottom:8px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--white)">
+            ${dayHeader(uid, date, dayTotal)}
+            <div id="${uid}" style="display:none">
+              ${di.map(a => {
+                const rid = 'tr_'+a._key;
+                return `<div style="border-top:1px solid var(--border)">
+                  <div id="view_${rid}" style="padding:10px 14px">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                      <div>
+                        <div style="font-size:13px;font-weight:600;color:var(--text)">${a.name} → ${a.dest}</div>
+                        <div style="font-size:12px;color:var(--text-sub);margin-top:2px">${a.purpose}</div>
+                        <span style="display:inline-block;margin-top:4px;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;background:${a.status==='申請中'?'var(--warning-bg)':'var(--surface)'};color:${a.status==='申請中'?'var(--warning)':'var(--text-muted)'}">${a.status}</span>
+                      </div>
+                      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+                        <span style="font-size:16px;font-weight:700;color:#4a4a4a">${yen(a.amount)}</span>
+                        ${actionBtns(`openEditRow('${rid}')`, `deleteTrip('${a._key}')`)}
+                      </div>
+                    </div>
+                  </div>
+                  <div id="edit_${rid}" style="display:none;padding:12px 14px;background:#fffde7">
+                    <div style="display:grid;gap:8px">
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">日付</div>${inp(a.date,'et_date_'+rid,'date')}</div>
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">申請者</div>${sel(NAMES_LIST,a.name,'et_name_'+rid)}</div>
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">出張先</div>${sel(TRIP_DESTS,a.dest,'et_dest_'+rid)}</div>
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">目的</div>${sel(TRIP_PURPOSES,a.purpose,'et_purpose_'+rid)}</div>
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">ステータス</div>${sel(['申請中','下書き'],a.status,'et_status_'+rid)}</div>
+                    </div>
+                    ${editBtnRow(`saveTrip('${a._key}','${rid}')`, `closeEditRow('${rid}')`)}
+                  </div>
+                </div>`;
+              }).join('')}
+            </div>
+          </div>`;
+        }).join('')}
+      </div>`;
+    }).join('');
+
   } else if (currentListTab === 'expense') {
     const items = window._getExpenses ? window._getExpenses() : [];
-    document.getElementById('list-count').textContent = items.length + '件';
-    if (!items.length) { container.innerHTML = ''; empty.style.display = 'block'; return; }
-    empty.style.display = 'none';
-    container.innerHTML = items.map(e => `
-      <div class="trip-card">
-        <div class="trip-card-head">
-          <div class="trip-meta"><span class="trip-date">${e.date}</span><span class="trip-name">${e.payee}</span></div>
-          <span class="trip-status status-expense">${e.category}</span>
-        </div>
-        <div class="trip-card-body">
-          <div class="trip-dest">${e.content}</div>
-          <div class="trip-footer">
-            <div class="trip-amount">¥${e.amount.toLocaleString('ja-JP')}</div>
-            <button class="delete-btn" onclick="deleteExpense('${e._key}')">削除</button>
-          </div>
-        </div>
-      </div>`).join('');
+    countEl.textContent = items.length + '件';
+    if (!items.length) { empty.style.display = 'block'; return; }
+    const byMonth = groupByMonth(items);
+    container.innerHTML = byMonth.map(({ month, items: mi }) => {
+      const monthTotal = mi.reduce((s,e) => s+e.amount, 0);
+      const byDay = groupByDay(mi);
+      return `<div style="margin-bottom:20px">
+        ${monthHeader(month, monthTotal, '#4a4a4a')}
+        ${byDay.map(({ date, items: di }, di_idx) => {
+          const dayTotal = di.reduce((s,e) => s+e.amount, 0);
+          const uid = 'exp_'+month.replace('-','')+'_'+di_idx;
+          return `<div style="margin-bottom:8px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--white)">
+            ${dayHeader(uid, date, dayTotal, '#4a4a4a')}
+            <div id="${uid}" style="display:none">
+              ${di.map(e => {
+                const rid = 'ex_'+e._key;
+                return `<div style="border-top:1px solid var(--border)">
+                  <div id="view_${rid}" style="padding:10px 14px">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                      <div>
+                        <div style="font-size:13px;font-weight:600;color:var(--text)">${e.payee}</div>
+                        <div style="font-size:12px;color:var(--text-sub);margin-top:2px">${e.content}</div>
+                        <span style="display:inline-block;margin-top:4px;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--purple-bg);color:var(--purple)">${e.category}</span>
+                      </div>
+                      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+                        <span style="font-size:16px;font-weight:700;color:#4a4a4a">${yen(e.amount)}</span>
+                        ${actionBtns(`openEditRow('${rid}')`, `deleteExpense('${e._key}')`)}
+                      </div>
+                    </div>
+                  </div>
+                  <div id="edit_${rid}" style="display:none;padding:12px 14px;background:#fffde7">
+                    <div style="display:grid;gap:8px">
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">日付</div>${inp(e.date,'ee_date_'+rid,'date')}</div>
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">支払先</div>${inp(e.payee,'ee_payee_'+rid,'text','支払先')}</div>
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">用途</div>${sel(EXP_CATS,e.category,'ee_cat_'+rid)}</div>
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">詳細メモ</div>${inp(e.note||'','ee_note_'+rid,'text','メモ')}</div>
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">金額（円）</div>${inp(e.amount,'ee_amount_'+rid,'number')}</div>
+                    </div>
+                    ${editBtnRow(`saveExpense('${e._key}','${rid}')`, `closeEditRow('${rid}')`)}
+                  </div>
+                </div>`;
+              }).join('')}
+            </div>
+          </div>`;
+        }).join('')}
+      </div>`;
+    }).join('');
+
   } else if (currentListTab === 'purchase') {
     const items = window._getPurchases ? window._getPurchases() : [];
-    document.getElementById('list-count').textContent = items.length + '件';
-    if (!items.length) { container.innerHTML = ''; empty.style.display = 'block'; return; }
-    empty.style.display = 'none';
-    container.innerHTML = items.map(p => `
-      <div class="trip-card">
-        <div class="trip-card-head">
-          <div class="trip-meta"><span class="trip-date">${p.date}</span></div>
-          <span class="trip-status status-purchase">${p.supplier}</span>
-        </div>
-        <div class="trip-card-body">
-          ${p.note ? `<div class="trip-purpose">${p.note}</div>` : ''}
-          <div class="trip-footer">
-            <div class="trip-amount">¥${p.amount.toLocaleString('ja-JP')}</div>
-            <button class="delete-btn" onclick="deletePurchase('${p._key}')">削除</button>
-          </div>
-        </div>
-      </div>`).join('');
-  } else {
+    countEl.textContent = items.length + '件';
+    if (!items.length) { empty.style.display = 'block'; return; }
+    const byMonth = groupByMonth(items);
+    container.innerHTML = byMonth.map(({ month, items: mi }) => {
+      const monthTotal = mi.reduce((s,p) => s+p.amount, 0);
+      const byDay = groupByDay(mi);
+      return `<div style="margin-bottom:20px">
+        ${monthHeader(month, monthTotal, '#4a4a4a')}
+        ${byDay.map(({ date, items: di }, di_idx) => {
+          const dayTotal = di.reduce((s,p) => s+p.amount, 0);
+          const uid = 'pur_'+month.replace('-','')+'_'+di_idx;
+          return `<div style="margin-bottom:8px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--white)">
+            ${dayHeader(uid, date, dayTotal, '#4a4a4a')}
+            <div id="${uid}" style="display:none">
+              ${di.map(p => {
+                const rid = 'pu_'+p._key;
+                return `<div style="border-top:1px solid var(--border)">
+                  <div id="view_${rid}" style="padding:10px 14px">
+                    <div style="display:flex;justify-content:space-between;align-items:center">
+                      <div>
+                        <div style="font-size:13px;font-weight:600;color:var(--text)">${p.supplier}</div>
+                        ${p.note?`<div style="font-size:12px;color:var(--text-sub);margin-top:2px">${p.note}</div>`:''}
+                      </div>
+                      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+                        <span style="font-size:16px;font-weight:700;color:#4a4a4a">${yen(p.amount)}</span>
+                        ${actionBtns(`openEditRow('${rid}')`, `deletePurchase('${p._key}')`)}
+                      </div>
+                    </div>
+                  </div>
+                  <div id="edit_${rid}" style="display:none;padding:12px 14px;background:#fffde7">
+                    <div style="display:grid;gap:8px">
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">日付</div>${inp(p.date,'ep_date_'+rid,'date')}</div>
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">仕入先</div>${sel(PUR_SUPS,p.supplier,'ep_sup_'+rid)}</div>
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">金額（円）</div>${inp(p.amount,'ep_amount_'+rid,'number')}</div>
+                      <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">メモ</div>${inp(p.note||'','ep_note_'+rid,'text','メモ')}</div>
+                    </div>
+                    ${editBtnRow(`savePurchase('${p._key}','${rid}')`, `closeEditRow('${rid}')`)}
+                  </div>
+                </div>`;
+              }).join('')}
+            </div>
+          </div>`;
+        }).join('')}
+      </div>`;
+    }).join('');
+
+  } else if (currentListTab === 'sales') {
     const items = window._getSales ? window._getSales() : [];
-    document.getElementById('list-count').textContent = items.length + '件';
-    if (!items.length) { container.innerHTML = ''; empty.style.display = 'block'; return; }
-    empty.style.display = 'none';
-    container.innerHTML = items.map(s => `
-      <div class="trip-card">
-        <div class="trip-card-head">
-          <div class="trip-meta"><span class="trip-date">${s.date}</span><span class="trip-name">${s.salesType||''}</span></div>
-          <span class="trip-status status-sales">売上</span>
+    countEl.textContent = items.length + '件';
+    if (!items.length) { empty.style.display = 'block'; return; }
+    const byMonth = groupByMonth(items);
+    container.innerHTML = byMonth.map(({ month, items: mi }, m_idx) => {
+      const monthTotal = mi.reduce((s,s2) => s+s2.amount, 0);
+      const uid = 'sal_'+month.replace('-','')+'_'+m_idx;
+      const sorted = [...mi].sort((a,b) => a.date.localeCompare(b.date));
+      return `<div style="margin-bottom:20px">
+        <div onclick="toggleDayGroup('${uid}')" style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:linear-gradient(135deg,#c8c8c8,#b8b8b8);border-radius:10px;margin-bottom:8px;border:1px solid #a8a8a8;cursor:pointer">
+          <span style="font-size:13px;font-weight:700;color:#3a3a3a">${fmtYM(month)}</span>
+          <span style="display:flex;align-items:center;gap:10px">
+            <span style="font-size:14px;font-weight:700;color:#4a4a4a">${yen(monthTotal)}</span>
+            <span id="arr_${uid}" style="font-size:11px;color:var(--text-muted);transition:transform 0.2s">▼</span>
+          </span>
         </div>
-        <div class="trip-card-body">
-          <div class="trip-dest">${s.client}</div>
-          ${s.note ? `<div class="trip-purpose">${s.note}</div>` : ''}
-          <div class="trip-footer">
-            <div class="trip-amount" style="color:var(--teal)">¥${s.amount.toLocaleString('ja-JP')}</div>
-            <button class="delete-btn" onclick="deleteSales('${s._key}')">削除</button>
-          </div>
+        <div id="${uid}" style="display:none;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--white)">
+          ${sorted.map((s, si) => {
+            const rid = 'sa_'+s._key;
+            const isOvs = s.salesType==='国外（インボイス）';
+            const clients = isOvs ? OVS_CLIENTS : DOM_CLIENTS;
+            return `<div style="${si>0?'border-top:1px solid var(--border)':''}">
+              <div id="view_${rid}" style="padding:10px 14px">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                  <div>
+                    <div style="font-size:12px;color:var(--text-muted)">${fmtDate(s.date)}</div>
+                    <div style="font-size:13px;font-weight:600;color:var(--text);margin-top:2px">${s.client}</div>
+                    <span style="display:inline-block;margin-top:4px;font-size:11px;padding:2px 8px;border-radius:20px;background:var(--teal-bg);color:var(--teal)">${s.salesType||''}</span>
+                    ${s.note?`<div style="font-size:12px;color:var(--text-sub);margin-top:2px">${s.note}</div>`:''}
+                  </div>
+                  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+                    <span style="font-size:16px;font-weight:700;color:#4a4a4a">${yen(s.amount)}</span>
+                    ${actionBtns(`openEditRow('${rid}')`, `deleteSales('${s._key}')`)}
+                  </div>
+                </div>
+              </div>
+              <div id="edit_${rid}" style="display:none;padding:12px 14px;background:#fffde7">
+                <div style="display:grid;gap:8px">
+                  <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">日付</div>${inp(s.date,'es_date_'+rid,'date')}</div>
+                  <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">区分</div>${sel(['国内（請求書）','国外（インボイス）'],s.salesType||'国内（請求書）','es_type_'+rid)}</div>
+                  <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">卸先</div><select id="es_client_${rid}" style="font-size:13px;padding:6px 8px;border:1.5px solid var(--gold);border-radius:6px;background:var(--white);width:100%">${clients.map(c=>`<option value="${c}"${c===s.client?' selected':''}>${c}</option>`).join('')}</select></div>
+                  <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">金額（円）</div>${inp(s.amount,'es_amount_'+rid,'number')}</div>
+                  <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">入金期日</div>${inp(s.due||'','es_due_'+rid,'date')}</div>
+                  <div><div style="font-size:11px;color:var(--text-muted);margin-bottom:3px">メモ</div>${inp(s.note||'','es_note_'+rid,'text','メモ')}</div>
+                </div>
+                ${editBtnRow(`saveSales('${s._key}','${rid}')`, `closeEditRow('${rid}')`)}
+              </div>
+            </div>`;
+          }).join('')}
         </div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
   }
+}
+
+function toggleDayGroup(uid) {
+  const el = document.getElementById(uid);
+  const arr = document.getElementById('arr_' + uid);
+  if (!el) return;
+  const open = el.style.display !== 'none';
+  el.style.display = open ? 'none' : 'block';
+  if (arr) arr.style.transform = open ? '' : 'rotate(180deg)';
+}
+
+// ── グラフ描画 ──
+function renderChart(container) {
+  const purchases = window._getPurchases ? window._getPurchases() : [];
+  const sales     = window._getSales     ? window._getSales()     : [];
+
+  const currentYear = new Date().getFullYear();
+  const prevYear    = currentYear - 1;
+
+  // 月ごとに集計（今年・去年）
+  const months = Array.from({length:12}, (_,i) => String(i+1).padStart(2,'0'));
+
+  const purCurr  = months.map(m => purchases.filter(p => p.date?.startsWith(currentYear+'-'+m)).reduce((s,p)=>s+p.amount,0));
+  const purPrev  = months.map(m => purchases.filter(p => p.date?.startsWith(prevYear+'-'+m)).reduce((s,p)=>s+p.amount,0));
+  const salCurr  = months.map(m => sales.filter(s => s.date?.startsWith(currentYear+'-'+m)).reduce((s,p)=>s+p.amount,0));
+  const salPrev  = months.map(m => sales.filter(s => s.date?.startsWith(prevYear+'-'+m)).reduce((s,p)=>s+p.amount,0));
+
+  const maxVal = Math.max(...purCurr, ...purPrev, ...salCurr, ...salPrev, 1);
+  const barH = 160; // グラフ高さ(px)
+
+  function bar(val, color, opacity=1) {
+    const h = Math.round((val / maxVal) * barH);
+    return `<div style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:${barH}px">
+      <div style="width:100%;height:${h}px;background:${color};opacity:${opacity};border-radius:3px 3px 0 0;min-height:${val>0?2:0}px"></div>
+    </div>`;
+  }
+
+  const cols = months.map((m, i) => {
+    const label = parseInt(m) + '月';
+    return `
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:1px">
+      <div style="width:100%;display:flex;gap:1px;align-items:flex-end;height:${barH}px">
+        <div style="flex:1">${bar(purPrev[i], '#fed7aa', 0.6)}</div>
+        <div style="flex:1">${bar(purCurr[i], '#ea580c', 1)}</div>
+        <div style="flex:1">${bar(salPrev[i], '#99f6e4', 0.6)}</div>
+        <div style="flex:1">${bar(salCurr[i], '#0f766e', 1)}</div>
+      </div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:3px">${label}</div>
+    </div>`;
+  }).join('');
+
+  // 月別サマリー（今年のみ）
+  const summaryRows = months.map((m, i) => {
+    const p = purCurr[i], s = salCurr[i];
+    if (p === 0 && s === 0) return '';
+    const profit = s - p;
+    return `
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid var(--border);font-size:12px">
+      <span style="font-weight:600;color:var(--text)">${currentYear}年${parseInt(m)}月</span>
+      <span style="color:var(--orange)">${yen(p)}</span>
+      <span style="color:var(--teal)">${yen(s)}</span>
+      <span style="font-weight:700;color:${profit>=0?'var(--success)':'var(--danger)'}">${yen(profit)}</span>
+    </div>`;
+  }).filter(Boolean).join('');
+
+  container.innerHTML = `
+  <div style="background:var(--white);border-radius:var(--radius);border:1px solid var(--border);padding:14px;margin-bottom:16px">
+    <div style="font-size:12px;font-weight:700;color:#909090;margin-bottom:12px">仕入 vs 売上（月別比較）</div>
+    <div style="display:flex;gap:2px;align-items:flex-end;overflow-x:auto;padding-bottom:4px">
+      ${cols}
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;font-size:11px">
+      <span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:12px;height:12px;background:#fed7aa;border-radius:2px;opacity:0.6"></span>仕入(${prevYear})</span>
+      <span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:12px;height:12px;background:#ea580c;border-radius:2px"></span>仕入(${currentYear})</span>
+      <span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:12px;height:12px;background:#99f6e4;border-radius:2px;opacity:0.6"></span>売上(${prevYear})</span>
+      <span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:12px;height:12px;background:#0f766e;border-radius:2px"></span>売上(${currentYear})</span>
+    </div>
+  </div>
+  <div style="background:var(--white);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;margin-bottom:16px">
+    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--surface);font-size:11px;font-weight:700;color:var(--text-muted);border-bottom:1px solid var(--border)">
+      <span>月</span><span style="color:var(--orange)">仕入合計</span><span style="color:var(--teal)">売上合計</span><span>粗利益</span>
+    </div>
+    ${summaryRows || '<div style="padding:20px;text-align:center;color:var(--text-muted);font-size:13px">データがありません</div>'}
+  </div>`;
 }
 
 async function deleteTrip(key) { if (!confirm('削除しますか？')) return; try { await window._fbRemoveTrip(key); showToast('削除しました'); } catch(e) {} }
 async function deleteExpense(key) { if (!confirm('削除しますか？')) return; try { await window._fbRemoveExpense(key); showToast('削除しました'); } catch(e) {} }
 async function deletePurchase(key) { if (!confirm('削除しますか？')) return; try { await window._fbRemovePurchase(key); showToast('削除しました'); } catch(e) {} }
 
+let _lastSeenCount = parseInt(sessionStorage.getItem('kanetaka_seen_count') || '0');
+
 function updateBadge() {
   const n = (window._getTrips?.()||[]).length + (window._getExpenses?.()||[]).length + (window._getPurchases?.()||[]).length + (window._getSales?.()||[]).length;
   const b = document.getElementById('nav-badge');
-  b.style.display = n > 0 ? 'block' : 'none';
-  b.textContent = n;
+  const diff = n - _lastSeenCount;
+  if (diff > 0) {
+    b.style.display = 'block';
+    b.textContent = diff;
+  } else {
+    b.style.display = 'none';
+  }
+}
+
+function markListSeen() {
+  const n = (window._getTrips?.()||[]).length + (window._getExpenses?.()||[]).length + (window._getPurchases?.()||[]).length + (window._getSales?.()||[]).length;
+  _lastSeenCount = n;
+  sessionStorage.setItem('kanetaka_seen_count', String(n));
+  const b = document.getElementById('nav-badge');
+  b.style.display = 'none';
 }
 
 function initYearSelect() {
@@ -1456,7 +1983,7 @@ function selectMonth(year, month, btnEl) {
   noData.style.display = 'none';
   const NAMES = window._getNames?.() || [];
   const SUPPLIERS = window._getSuppliers?.() || [];
-  let html = `<div style="font-size:13px;font-weight:700;color:var(--gold-dark);margin-bottom:10px">${year}年${month}月分</div>`;
+  let html = `<div style="font-size:13px;font-weight:700;color:#3a3a3a;margin-bottom:10px">${year}年${month}月分</div>`;
 
   if (tApps.length) {
     const tripTotal = tApps.reduce((s,a) => s+a.amount, 0);
@@ -1756,9 +2283,10 @@ function showScreen(name) {
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('screen-' + name).classList.add('active');
   document.getElementById('nav-' + name).classList.add('active');
-  if (name === 'list')        renderList();
+  if (name === 'list')        { renderList(); markListSeen(); }
   if (name === 'export')      renderMonthGrid();
   if (name === 'receivable')  renderReceivable();
+  if (name === 'settings')    initSettingsScreen();
 }
 
 function showAlert(boxId, msgId, msg, type) {
@@ -1880,6 +2408,180 @@ async function doLogin() {
   } finally {
     btn.disabled = false;
     btn.textContent = 'ログイン';
+  }
+}
+
+// ── 設定画面 ──
+function initSettingsScreen() {
+  const session = sessionStorage.getItem('kanetaka_auth_token');
+  if (session) {
+    const parsed = JSON.parse(session);
+    const el = document.getElementById('current-email-display');
+    if (el) el.textContent = parsed.email || '—';
+  }
+}
+
+async function reAuth(email, password) {
+  const r = await fetch(
+    `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${AUTH_API_KEY}`,
+    { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password, returnSecureToken: true }) }
+  );
+  const d = await r.json();
+  if (!d.idToken) throw new Error(d.error?.message || '認証エラー');
+  window._idToken = d.idToken;
+  sessionStorage.setItem('kanetaka_auth_token', JSON.stringify({ email: d.email, idToken: d.idToken, loggedInAt: Date.now() }));
+  return d;
+}
+
+async function doChangeEmail() {
+  const session = JSON.parse(sessionStorage.getItem('kanetaka_auth_token') || '{}');
+  const currentEmail = session.email || '';
+  const pw    = document.getElementById('settings-current-pw').value;
+  const email1 = document.getElementById('settings-new-email').value.trim();
+  const email2 = document.getElementById('settings-new-email2').value.trim();
+
+  if (!pw || !email1 || !email2) {
+    showAlert('settings-alert', 'settings-alert-msg', 'すべての項目を入力してください', 'error'); return;
+  }
+  if (email1 !== email2) {
+    showAlert('settings-alert', 'settings-alert-msg', '新しいメールアドレスが一致しません', 'error'); return;
+  }
+  if (email1 === currentEmail) {
+    showAlert('settings-alert', 'settings-alert-msg', '現在と同じメールアドレスです', 'error'); return;
+  }
+
+  try {
+    // 再認証
+    await reAuth(currentEmail, pw);
+    // メールアドレス変更
+    const r = await fetch(
+      `https://identitytoolkit.googleapis.com/v1/accounts:update?key=${AUTH_API_KEY}`,
+      { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idToken: window._idToken, email: email1, returnSecureToken: true }) }
+    );
+    const d = await r.json();
+    if (d.email) {
+      sessionStorage.setItem('kanetaka_auth_token', JSON.stringify({ email: d.email, idToken: d.idToken || window._idToken, loggedInAt: Date.now() }));
+      window._idToken = d.idToken || window._idToken;
+      document.getElementById('current-email-display').textContent = d.email;
+      document.getElementById('settings-current-pw').value = '';
+      document.getElementById('settings-new-email').value = '';
+      document.getElementById('settings-new-email2').value = '';
+      showAlert('settings-alert', 'settings-alert-msg', `メールアドレスを ${d.email} に変更しました`, 'success');
+    } else {
+      throw new Error(d.error?.message || 'エラー');
+    }
+  } catch(e) {
+    const msg = e.message && e.message.includes('INVALID_PASSWORD')
+      ? '現在のパスワードが正しくありません'
+      : 'メールアドレスの変更に失敗しました';
+    showAlert('settings-alert', 'settings-alert-msg', msg, 'error');
+  }
+}
+
+async function doChangePassword() {
+  const session = JSON.parse(sessionStorage.getItem('kanetaka_auth_token') || '{}');
+  const currentEmail = session.email || '';
+  const currentPw = document.getElementById('settings-current-pw2').value;
+  const newPw1    = document.getElementById('settings-new-pw').value;
+  const newPw2    = document.getElementById('settings-new-pw2').value;
+
+  if (!currentPw || !newPw1 || !newPw2) {
+    showAlert('pw-change-alert', 'pw-change-alert-msg', 'すべての項目を入力してください', 'error'); return;
+  }
+  if (newPw1 !== newPw2) {
+    showAlert('pw-change-alert', 'pw-change-alert-msg', '新しいパスワードが一致しません', 'error'); return;
+  }
+  if (newPw1.length < 6) {
+    showAlert('pw-change-alert', 'pw-change-alert-msg', 'パスワードは6文字以上で入力してください', 'error'); return;
+  }
+
+  try {
+    await reAuth(currentEmail, currentPw);
+    const r = await fetch(
+      `https://identitytoolkit.googleapis.com/v1/accounts:update?key=${AUTH_API_KEY}`,
+      { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idToken: window._idToken, password: newPw1, returnSecureToken: true }) }
+    );
+    const d = await r.json();
+    if (d.idToken) {
+      sessionStorage.setItem('kanetaka_auth_token', JSON.stringify({ email: currentEmail, idToken: d.idToken, loggedInAt: Date.now() }));
+      window._idToken = d.idToken;
+      document.getElementById('settings-current-pw2').value = '';
+      document.getElementById('settings-new-pw').value = '';
+      document.getElementById('settings-new-pw2').value = '';
+      showAlert('pw-change-alert', 'pw-change-alert-msg', 'パスワードを変更しました', 'success');
+    } else {
+      throw new Error(d.error?.message || 'エラー');
+    }
+  } catch(e) {
+    const msg = e.message && e.message.includes('INVALID_PASSWORD')
+      ? '現在のパスワードが正しくありません'
+      : 'パスワードの変更に失敗しました';
+    showAlert('pw-change-alert', 'pw-change-alert-msg', msg, 'error');
+  }
+}
+
+function doLogout() {
+  if (!confirm('ログアウトしますか？')) return;
+  sessionStorage.removeItem('kanetaka_auth_token');
+  window._idToken = null;
+  location.reload();
+}
+
+function showResetModal() {
+  document.getElementById('reset-modal').style.display = 'flex';
+  document.getElementById('reset-email').value = document.getElementById('login-email').value || '';
+  document.getElementById('reset-error').style.display = 'none';
+  document.getElementById('reset-success').style.display = 'none';
+  document.getElementById('reset-btn').disabled = false;
+  document.getElementById('reset-btn').textContent = '送信';
+}
+
+function closeResetModal() {
+  document.getElementById('reset-modal').style.display = 'none';
+}
+
+async function doReset() {
+  const email = document.getElementById('reset-email').value.trim();
+  const errEl = document.getElementById('reset-error');
+  const okEl  = document.getElementById('reset-success');
+  const btn   = document.getElementById('reset-btn');
+  errEl.style.display = 'none';
+  okEl.style.display  = 'none';
+
+  if (!email) {
+    errEl.textContent = 'メールアドレスを入力してください';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+
+  try {
+    const r = await fetch(
+      `https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${AUTH_API_KEY}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ requestType: 'PASSWORD_RESET', email })
+      }
+    );
+    const d = await r.json();
+    if (d.email) {
+      okEl.textContent = `${email} にリセット用リンクを送信しました。メールをご確認ください。`;
+      okEl.style.display = 'block';
+      btn.textContent = '送信済み';
+    } else {
+      throw new Error(d.error?.message || 'エラー');
+    }
+  } catch(e) {
+    errEl.textContent = 'メールの送信に失敗しました。メールアドレスをご確認ください。';
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = '送信';
   }
 }
 
